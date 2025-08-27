@@ -2,6 +2,15 @@
 
 ## Summary
 
+### Deployment on Render
+
+This application is deployed on [Render](https://render.com).
+Render spins down free services after a period of inactivity. The first visit to the live site after a spin-down will experience a cold start delay while the server boots up (typically 30-60 seconds).
+**Before starting stress testing:**
+1.  Manually visit the [live site](https://latamairlineschallenge.onrender.com/) first.
+2.  Wait for the initial load to complete.
+3.  Once the site is responsive, you can begin your testing.
+
 ### Model Selection: XGBoost
 
 For this challenge, I chose to use the **XGBoost** model with the top 10 most important features and class balancing.
@@ -54,6 +63,9 @@ pip install -r requirements-test.txt
 pip install xgboost
 pip install jupyter
 pip install "anyio<4.0.0"
+pip install jinja2<3.1.0
+pip install itsdangerous==2.0.1
+pip install werkzeug==2.0.3
 ```
 
 ### 4. Run Tests
